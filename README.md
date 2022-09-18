@@ -97,6 +97,12 @@ python tools/train.py --cfg configs/cityscapes/pidnet_small_cityscapes.yaml GPUS
 python tools/train.py --cfg configs/cityscapes/pidnet_large_cityscapes_trainval.yaml GPUS (0,1,2,3) TRAIN.BATCH_SIZE_PER_GPU 3
 ````
 
+````bash
+python tools/train.py --cfg configs/carla/pidnet_small_carla.yaml GPUS [0] TRAIN.BATCH_SIZE_PER_GPU 8
+python tools/train.py --cfg configs/carla/pidnet_small_carla.yaml GPUS [0] TRAIN.BATCH_SIZE_PER_GPU 8 TRAIN.RESUME true
+python tools/eval.py --cfg configs/carla/pidnet_small_carla.yaml TEST.MODEL_FILE output/carla/pidnet_small_carla/checkpoint.pth.tar
+````
+
 ### 2. Evaluation
 
 * Download the finetuned models for Cityscapes and CamVid and put them into `pretrained_models/cityscapes/` and `pretrained_models/camvid/` dirs, respectively.
